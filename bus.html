@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Një Udhëtim Fillon Me Një Hap Të Vetëm, Andaj Rezervoni Bileten Në Riga Travel!">
+    <meta name="keywords" content="Travel, Riga travel, Flights, Hotels, Tours, Vacation, Holiday, Tourism, Travel agency">
+    <meta name="author" content="Riga Travel">
+    <link rel="icon" type="image/png" href="images/pa_bg-removebg-preview.png"/>
+    <meta property="og:title" content="Riga Travel">
+    <title>Bus</title>
+    <link rel="stylesheet" href="styles.css">
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <b class="titulli">RIGA TRAVEL</b>
+                <img class="riga" src="icon/logologoo-removebg-preview.png" alt="Riga Travel Logo">
+            </div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776; </div>
+            <nav id="nav-links" >
+            <a href="index.html"data-en="Home" data-sq="Ballina">Home</a>
+            <a href="hotel.html"data-en="Hotel" data-sq="Hotel">Hotel></a>
+            <a href="flight.html"data-en="Flight" data-sq="Fluturime">Flight</a>
+            <a href="bus.html" class="active"  data-en="Bus" data-sq="Autobus">Bus</a>
+            <a href="contact.html"data-en="Contact" data-sq="Kontakt">Contact</a>
+            </nav>
+            <div class="language-selector">
+                <button onclick="setLanguage('en')"><b class="anglish">EN</b></button>
+                <button onclick="setLanguage('sq')"><b class="shqip">ALB</b></button>
+            </div>
+            <script>
+           let lastScrollTop = 0; 
+                const navbar = document.querySelector('header');
+    
+                    window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling down: hide the navbar
+                    navbar.classList.add('hidden');
+                } else if (currentScroll === 0) {
+                    // Back at the top: show the navbar
+                    navbar.classList.remove('hidden');
+                }
+    
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+    
+                </script>           
+        </nav>
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll("[data-en]");
+  
+      // Function to set language
+      function setLanguage(lang) {
+          localStorage.setItem("language", lang);
+          elements.forEach(el => {
+              el.textContent = el.getAttribute(`data-${lang}`);
+          });
+      }
+  
+      // Get saved language or default to English
+      const savedLanguage = localStorage.getItem("language") || "en";
+      setLanguage(savedLanguage);
+  
+      // Assign the function to global scope so buttons work
+      window.setLanguage = setLanguage;
+  });
+      </script>
+        <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>   
+    </header>
+    <button onclick="scrollToTop()" class="back-to-top" data-en="🔝" data-sq="🔝">🔝</button>
+
+
+<script>
+          // Show/hide the button based on scroll position and screen size
+document.addEventListener("scroll", function () {
+    const button = document.querySelector(".back-to-top");
+    const isSmallScreen = window.matchMedia("(max-width: 820px)").matches; // Match media query
+
+    if (isSmallScreen && window.scrollY > 100) { // Only show on small screens and when scrolled down
+        button.classList.add("show");
+    } else {
+        button.classList.remove("show");
+    }
+});
+
+// Scroll to the top when the button is clicked
+document.querySelector(".back-to-top").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling effect
+    });
+});
+
+</script>
+
+    <!-- Bus Content -->
+    
+    <div id="banner2">
+        <img src="images/busiri.png" alt="Travel Banner" id="banner2-image">
+        
+        <h1  
+            data-en="Comfortable Rides, Convenient Routes – Your Journey Begins With Us!" 
+            data-sq="Udhëtime Të Rehatshme, Rrugë Të Përshtatshme - Udhëtimi Juaj Fillon Me Ne!">
+            Comfortable Rides, Convenient Routes – Your Journey Begins With Us!
+        </h1>
+    </div>
+
+
+
+    <h2 class="emri13" data-en="BUS" data-sq="AUTOBUS">BUS</h2>
+
+<br>
+
+    <section id="destinations4" class="destinations4">
+        <h3 class="emri18" data-en="FROM " data-sq="NGA" FROM ></h3>
+        <div class="destination4-cards">       
+            <!-- Germany Card -->
+            <div class="card11">
+              <div class="slides1">
+                <img src="images/flag.jpg" alt="Kosovë" class="active" data-text="Kosovë">
+                <img src="images/prishtina.jpg" alt="Prishtina" data-text="Prishtina">
+                <img src="images/Gjilan.jpg" alt="Gjilan" data-text="Gjilan">
+                <img src="images/ferizaj.jpg" alt="Ferizaj" data-text="Ferizaj">
+                <img src="images/prizren.jpg" alt="Prizren" data-text="Prizren">
+                <img src="images/peja.jpg" alt="Peja" data-text="Peja">
+               </div>
+              <div class="text-container">Kosovë</div>
+            </div>
+        </div> 
+    </div>
+    </section>
+     
+    <section id="destinations4" class="destinations4">
+        <h3 class="emri18" data-en="TO " data-sq="Në " TO  ></h3>
+        <div class="destination4-cards">       
+            <!-- Germany Card -->
+            <div class="card11">
+              <div class="slides1">
+                <img src="images/german_flag.jpg" alt="Germany" class="active" data-text="Germany">
+                <img src="images/AUGSBURG.jpg" alt="Augsburg" data-text="Augsburg">
+                <img src="images/ABEN.jpg" alt="Abensberg" data-text="Abensberg">
+                <img src="images/FANKFURT.jpg" alt="Frankfurt" data-text="Frankfurt">
+                <img src="images/ingolstadt.jpg" alt="Ingolstadt" data-text="Ingolstadt">
+                <img src="images/munchen.webp" alt="München" data-text="München">
+              </div>
+              <div class="text-container">Germany</div>
+            </div>
+          <!-- zv Card -->
+              <div class="card11">
+                <div class="slides1">
+                    <img src="images/austria.jpg" alt="Austria" class="active" data-text="Austria">
+                    <img src="images/ebene.jpg" alt="Ebene" data-text="Ebene">
+                    <img src="images/salzburg.webp" alt="Salzburg AU" data-text="Salzburg AU">
+                    <img src="images/villach.jpg" alt="Villach" data-text="Villach">
+                    <div class="text-container">Austria</div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script>
+            const cards = document.querySelectorAll('.card11'); // Select all cards
+          
+            cards.forEach(card => {
+              const slides = card.querySelectorAll('img');
+              const textContainer = card.querySelector('.text-container');
+              let currentIndex = 0;
+          
+              setInterval(() => {
+                // Remove active class from the current image
+                slides[currentIndex].classList.remove('active');
+          
+                // Update index for the next image
+                currentIndex = (currentIndex + 1) % slides.length;
+          
+                // Add active class to the next image
+                slides[currentIndex].classList.add('active');
+          
+                // Update the text in the text container
+                textContainer.textContent = slides[currentIndex].getAttribute('data-text') || 'No Data';
+              }, 2000); // Change every 3 seconds
+            });
+          </script>
+    
+
+    <footer>
+        <nav>
+            <a href="index.html"data-en="Home" data-sq="Ballina">Home</a>
+            <a href="hotel.html"data-en="Hotel" data-sq="Hotel">Hotel</a>
+            <a href="flight.html"data-en="Flight" data-sq="Fluturime">Flight</a>
+            <a href="bus.html"data-en="Bus" data-sq="Autobus">Bus</a>
+            <a href="contact.html"data-en="Contact" data-sq="Kontakt">Contact</a>
+        </nav>
+      
+        <img class="footer-logo" src="icon/logologoo-removebg-preview.png" alt="Footer Logo">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.instagram.com/rigatravel_/" target="_blank">
+                    <img class="ig" src="icon/icons8-instagram-50.png" alt="Instagram">
+                </a>
+                    <a href="https://www.facebook.com/profile.php?id=61556508524916&mibextid=LQQJ4d" target="_blank">
+                    <img class="fb" src="icon/icons8-facebook-50.png" alt="Facebook"> 
+                </a> 
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rigatravel2024@gmail.com&su=Inquiry%20from%20Website" target="_blank">
+                    <img class="emaili" src="icon/icons8-email-50.png" alt="Email"> 
+                </a>
+      
+                <p>&copy; 2025 RIGA TRAVEL.</p>
+            </div>
+        </div>
+      </footer>
+
+</body>
+</html>

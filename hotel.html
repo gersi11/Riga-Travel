@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Një Udhëtim Fillon Me Një Hap Të Vetëm, Andaj Rezervoni Bileten Në Riga Travel!">
+    <meta name="keywords" content="Travel, Riga travel, Flights, Hotels, Tours, Vacation, Holiday, Tourism, Travel agency">
+    <meta name="author" content="Riga Travel">
+    <link rel="icon" type="image/png" href="images/pa_bg-removebg-preview.png" />
+    <meta property="og:title" content="Riga Travel">
+    <title>Hotel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <b class="titulli">RIGA TRAVEL</b>
+                <img class="riga" src="icon/logologoo-removebg-preview.png" alt="Riga Travel Logo">
+            </div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776; </div>
+             <nav id="nav-links" >
+            <a href="index.html"data-en="Home" data-sq="Ballina">Home</a>
+            <a href="hotel.html" class="active"data-en="Hotel" data-sq="Hotel">Hotel></a>
+            <a href="flight.html"data-en="Flight" data-sq="Fluturime">Flight</a>
+            <a href="bus.html"data-en="Bus" data-sq="Autobus">Bus></a>
+            <a href="contact.html"data-en="Contact" data-sq="Kontakt">Contact</a>
+            </nav>
+            <div class="language-selector">
+                <button onclick="setLanguage('en')"><b class="anglish">EN</b></button>
+                <button onclick="setLanguage('sq')"><b class="shqip">ALB</b></button>
+            </div>
+            <script>
+           let lastScrollTop = 0; 
+                const navbar = document.querySelector('header');
+    
+                    window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling down: hide the navbar
+                    navbar.classList.add('hidden');
+                } else if (currentScroll === 0) {
+                    // Back at the top: show the navbar
+                    navbar.classList.remove('hidden');
+                }
+    
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+    
+                </script>  
+                         
+        </nav>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll("[data-en]");
+
+    // Function to set language
+    function setLanguage(lang) {
+        localStorage.setItem("language", lang);
+        elements.forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+        });
+    }
+
+    // Get saved language or default to English
+    const savedLanguage = localStorage.getItem("language") || "en";
+    setLanguage(savedLanguage);
+
+    // Assign the function to global scope so buttons work
+    window.setLanguage = setLanguage;
+});
+
+      </script>
+        <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>   
+    </header>
+    <button onclick="scrollToTop()" class="back-to-top" data-en="🔝" data-sq="🔝">🔝</button>
+
+
+<script>
+          // Show/hide the button based on scroll position and screen size
+document.addEventListener("scroll", function () {
+    const button = document.querySelector(".back-to-top");
+    const isSmallScreen = window.matchMedia("(max-width: 820px)").matches; // Match media query
+
+    if (isSmallScreen && window.scrollY > 100) { // Only show on small screens and when scrolled down
+        button.classList.add("show");
+    } else {
+        button.classList.remove("show");
+    }
+});
+
+// Scroll to the top when the button is clicked
+document.querySelector(".back-to-top").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling effect
+    });
+});
+
+</script>
+
+
+    <div id="banner1">
+        <img src="images/pexels-asadphoto-3155726.jpg" alt="Travel Banner" id="banner1-image">
+        
+        <h1 data-en="Enjoy Your Holidays With Us!" 
+            data-sq="Shijoni Pushimet Tuaja Me Ne!">
+            Enjoy Your Holidays With Us!
+        </h1>
+    </div>
+
+        
+
+     
+        
+    
+    <!-- Hotel Content -->
+    
+
+    <section id="destinations" class="destinations">
+        <div class="destination-cards">       
+            <h2 class="emri14" data-en="HOTEL" data-sq="HOTEL">HOTEL</h2>
+            <!-- Turkey Card -->
+            <div class="card5">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/rix.turk.jpg" alt="Antalya 4">
+                            <div class="img1-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img-text">Rixos Premium, Belek</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/LAGO.jpg" alt="Antalya 4"> 
+                            <div class="img5-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img4-text">Lago Hotel, Side</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/be premium.jpg" alt="Antalya 3">
+                            <div class="img6-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img2-text">Be Premium Hotel, Bodrum</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/bosphorus11.jpg" alt="Antalya 1">
+                            <div class="img6-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img3-text">Bosphorus Sorgun, Side</div>
+                        </div>
+                    </div>
+                    <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+                </div>
+                <h2 class="emri12" data-en="TURKEY" data-sq="TURQIA">TURKEY</h2>-
+                <p data-en="Beach is waiting for you. For more information send message!" data-sq="Plazhi po ju pret. Për më shumë informacione dërgoni mesazh!">Beach is waiting for you. For more information send message!</p>
+            </div>
+            
+
+            <div class="card5">             
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/2.jpg" alt="Antalya 4">
+                            <div class="img0-text">⭐⭐⭐⭐</div>
+                            <div class="img-text">Kassandra Palace, Halkidiki</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/ajul1.jpg" alt="Antalya 4"> 
+                            <div class="img56-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img55-text">Ajul Luxury, Halkidiki </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/exterior.jpg" alt="Antalya 3">
+                            <div class="img6-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img24-text">Potidea Palace, Halkidiki</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/alia-palace-panoramic.jpg" alt="Antalya 1">
+                            <div class="img61-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img31-text">Alia Palace, Pefkohori</div>
+                        </div>
+                    </div>
+                    <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+                </div>
+                <h2 class="emri12" data-en="GREECE" data-sq="GREQIA">GREECE</h2>-
+                <p data-en="Enjoy your vacation and view. For more information send message!" data-sq="Shijoni pushimet dhe pamjen tuaj. Për më shumë informacione dërgoni mesazh!">Enjoy your vacation and view. For more information send message!</p>
+            </div>
+            <div class="card5">              
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/5.jpg" alt="Antalya 4">
+                            <div class="img0-text">⭐⭐⭐⭐</div>
+                            <div class="img-text">Dreams Sunny Beach, Bulgaria </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/PLATINIUM.jpg" alt="Antalya 4"> 
+                            <div class="img56-text">⭐⭐⭐⭐</div>
+                            <div class="img55-text">Platinum Hotel, Bansko </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/69.jpg" alt="Antalya 3">
+                            <div class="img5-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img24-text">Lucky SPA & Relax, Bansko </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/melia.jpg" alt="Antalya 1">
+                            <div class="img98-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img99-text">Melia Sunny Beach, Bulgaria</div>
+                        </div>
+                        
+                    </div>
+                    <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+                </div>
+                <h2 class="emri12" data-en="BULGARIA , BANSKO" data-sq="BULLGARIA , BANSKO">BULGARIA , BANSKO</h2>-
+                <p data-en="Snow and beach here. For more information send message!" data-sq="Bore dhe plazh këtu. Për më shumë informacione dërgoni mesazh!">Snow and beach here. For more information send message!</p>
+            </div>
+    
+            <!-- Egypt Card -->
+            <div class="card5">
+                
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/813132.jpg" alt="Antalya 4">
+                            <div class="img110-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img100-text">Jaz Belvedere,  <br>Sharm El Sheikh</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/12d.jpg" alt="Antalya 4"> 
+                            <div class="img516-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img515-text">Monte Carlo, Sharm El Sheikh </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/ekom.jpg" alt="Antalya 3">
+                            <div class="img180-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img181-text">Sunrise Montemare,<br>Sharm El Sheikh </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/qyshj'.jpg" alt="Antalya 1">
+                            <div class="img898-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img999-text">Rixos Premium Seagate, <br> 
+                                Sharm El Sheikh</div>
+                        </div>
+                    </div>
+                    <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+                </div>
+                <h2 class="emri12" data-en="EGYPT" data-sq="EGJIPTI">EGYPT</h2>-
+                <p data-en="Experience the crystal water. For more information send message!" data-sq="Përjetoni ujin kristal. Për më shumë informacione dërgoni mesazh!">Experience the crystal water. For more information send message!</p>
+            </div>  
+            <div class="card5">
+                
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/ecossss.jpg" alt="Antalya 4">
+                            <div class="img1110-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img1100-text">Ecos, Dubai</div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/mas.avif" alt="Antalya 4"> 
+                            <div class="img1516-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img1515-text">HE Hotel Apartments, Dubai </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/0.jpg" alt="Antalya 3">
+                            <div class="img1180-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img1181-text">Vintage Grand, Dubai </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/89.jpg" alt="Antalya 1">
+                            <div class="img1898-text">⭐⭐⭐⭐⭐</div>
+                            <div class="img1999-text">Avani Deira, Dubai </div>
+                        </div>
+                    </div>
+                    <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+                </div>
+                <h2 class="emri12" data-en="DUBAI" data-sq="DUBAI">DUBAI</h2>-
+                <p data-en=" One place with full energy, events and activities.  For more information send message!" data-sq="Një vend me plot energji, evente dhe aktivitete.  Për më shumë informacione dërgoni mesazh!">One place with full energy, events and activities! For more information send message!</p>
+            </div>  
+        </div>
+    </section>
+    
+            <script>
+                function moveSlide(button, direction) 
+                {
+                    const slider = button.parentElement; 
+                    const slides = slider.querySelector('.slides');
+                    const totalSlides = slides.children.length;
+        
+               
+                     const slideWidth = 120 / totalSlides;
+        
+                
+                    let currentIndex = parseFloat(slides.style.transform.replace('translateX(', '').replace('%)', '')) || 0;
+                    currentIndex = Math.abs(currentIndex / slideWidth);
+        
+           
+                    currentIndex += direction;
+            
+                
+                    if (currentIndex >= totalSlides) {
+                        currentIndex = 0;
+                    } else if (currentIndex < 0) {
+                        currentIndex = totalSlides - 1;
+                    }
+            
+                
+                    slides.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+                }
+            
+            </script>
+
+<footer>
+    <nav>
+        <a href="index.html"data-en="Home" data-sq="Ballina">Home</a>
+        <a href="hotel.html" data-en="Hotel" data-sq="Hotel">Hotel</a>
+        <a href="flight.html"data-en="Flight" data-sq="Fluturime">Flight</a>
+        <a href="bus.html"data-en="Bus" data-sq="Autobus">Bus</a>
+        <a href="contact.html"data-en="Contact" data-sq="Kontakt">Contact</a>
+    </nav>
+
+    <img class="footer-logo" src="icon/logologoo-removebg-preview.png" alt="Footer Logo">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="https://www.instagram.com/rigatravel_/" target="_blank">
+                <img class="ig" src="icon/icons8-instagram-50.png" alt="Instagram">
+            </a>
+                <a href="https://www.facebook.com/profile.php?id=61556508524916&mibextid=LQQJ4d" target="_blank">
+                <img class="fb" src="icon/icons8-facebook-50.png" alt="Facebook"> 
+            </a> 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rigatravel2024@gmail.com&su=Inquiry%20from%20Website" target="_blank">
+                <img class="emaili" src="icon/icons8-email-50.png" alt="Email"> 
+            </a>
+
+            <p>&copy; 2025 RIGA TRAVEL.</p>
+        </div>
+    </div>
+</footer>
+
+</div>
+</body>
+</html>

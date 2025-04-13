@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Një Udhëtim Fillon Me Një Hap Të Vetëm, Andaj Rezervoni Bileten Në Riga Travel!">
+    <meta name="keywords" content="Travel, Riga travel, Flights, Hotels, Tours, Vacation, Holiday, Tourism, Travel agency">
+    <meta name="author" content="Riga Travel">
+    <link rel="icon" type="image/png" href="images/pa_bg-removebg-preview.png" />
+    <meta property="og:title" content="Riga Travel">
+    <title>Flight</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+              <b class="titulli">RIGA TRAVEL</b>
+                <img class="riga" src="icon/logologoo-removebg-preview.png" alt="Riga Travel Logo">
+            </div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776; </div>
+             <nav id="nav-links" >
+            <a href="index.html"data-en="Home" data-sq="Ballina">Home</a>
+            <a href="hotel.html"data-en="Hotel" data-sq="Hotel">Hotel></a>
+            <a href="flight.html" class="active"  data-en="Flight" data-sq="Fluturime">Flight</a>
+            <a href="bus.html"data-en="Bus" data-sq="Autobus">Bus></a>
+            <a href="contact.html"data-en="Contact" data-sq="Kontakt">Contact</a>
+           </nav>
+           <div class="language-selector">
+            <button onclick="setLanguage('en')"><b class="anglish">EN</b></button>
+            <button onclick="setLanguage('sq')"><b class="shqip">ALB</b></button>
+        </div>
+            <script>
+           let lastScrollTop = 0; 
+                const navbar = document.querySelector('header');
+    
+                    window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling down: hide the navbar
+                    navbar.classList.add('hidden');
+                } else if (currentScroll === 0) {
+                    // Back at the top: show the navbar
+                    navbar.classList.remove('hidden');
+                }
+    
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+    
+                </script>           
+        </nav>
+        <script>
+
+          document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll("[data-en]");
+
+    // Function to set language
+    function setLanguage(lang) {
+        localStorage.setItem("language", lang);
+        elements.forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+        });
+    }
+
+    // Get saved language or default to English
+    const savedLanguage = localStorage.getItem("language") || "en";
+    setLanguage(savedLanguage);
+
+    // Assign the function to global scope so buttons work
+    window.setLanguage = setLanguage;
+});
+    </script>
+       
+        <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>       
+    </header>
+    <button onclick="scrollToTop()" class="back-to-top" data-en="🔝" data-sq="🔝">🔝</button>
+
+
+<script>
+          // Show/hide the button based on scroll position and screen size
+document.addEventListener("scroll", function () {
+    const button = document.querySelector(".back-to-top");
+    const isSmallScreen = window.matchMedia("(max-width: 820px)").matches; // Match media query
+
+    if (isSmallScreen && window.scrollY > 100) { // Only show on small screens and when scrolled down
+        button.classList.add("show");
+    } else {
+        button.classList.remove("show");
+    }
+});
+
+// Scroll to the top when the button is clicked
+document.querySelector(".back-to-top").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling effect
+    });
+});
+
+</script>
+
+
+<div id="banner2">
+    <img src="images/fluturrr.png" alt="Travel Banner" id="banner2-image">
+    
+    <h1 data-en="Travel more, worry less!" 
+        data-sq="Udhëtoni më shumë, shqetësohuni më pak!">
+        Travel more, worry less!
+    </h1>
+</div>
+
+    
+
+    <!-- Flight Content -->
+  
+    <h2 class="emri13" data-en="FLIGHTS" data-sq="FLUTURIMET">FLIGHTS</h2> 
+   
+    <section id="destinations1" class="destinations1">
+      <div class="destination1-cards">       
+          <!-- Germany Card -->
+          <div class="card10">
+            <div class="slides1">
+              <img src="images/germanuuur.jpg" alt="Germany" class="active" data-text="Germany">
+              <img src="images/stuttgart.jpg" alt="Stuttgart" data-text="Stuttgart">
+              <img src="images/DUSSELDORF.jpg" alt="Düsseldorf" data-text="Düsseldorf">
+              <img src="images/berlin1.jpg" alt="Berlin" data-text="Berlin">
+              <img src="images/hamburg12.jpg" alt="Hamburg" data-text="Hamburg">
+              <img src="images/koln.jpg" alt="Cologne" data-text="Cologne">
+            </div>
+            <div class="text-container">Germany</div>
+          </div>
+        <!-- zv Card -->
+            <div class="card10">
+              <div class="slides2">
+                  <img src="images/zvicraa.jpg" alt="Switzerland" class="active" data-text="Switzerland">
+                  <img src="images/zurich1.jpg" alt="Zürich" data-text="Zürich">
+                  <img src="images/geneva.jpg" alt="Geneva" data-text="Geneva">
+                  <img src="images/basel.jpg" alt="Basel" data-text="Basel">
+                  <img src="images/bern.jpg" alt="Bern" data-text="Bern">
+                  <img src="images/st.jpg" alt="St.Moritz" data-text="St.Moritz">
+                  <div class="text-container">Switzerland</div>
+              </div>
+          </div>
+          <!-- turk Card -->
+        <div class="card10">
+          <div class="slides1">
+             <img src="images/turkia12.jpg" alt="Turkey" class="active" data-text="Turkey">
+             <img src="images/stanboll.jpg" alt="Istanbul" data-text="Istanbul">
+             <img src="images/izmir.jpg" alt="Izmir" data-text="Izmir">
+             <img src="images/ankara.jpg" alt="Ankara" data-text="Ankara">
+             <img src="images/antalya.jpg" alt="Antalya" data-text="Antalya">
+             <img src="images/alanya1.jpg" alt="Alanya" data-text="Alanya">
+             <div class="text-container">Turkey</div>
+              </div>
+         </div>
+          <!--itali Card -->
+         <div class="card10">
+          <div class="slides1">
+            <img src="images/italia12.jpg" alt="Italy" class="active" data-text="Italy">
+            <img src="images/milano123.jpg" alt="Milan" data-text="Milan">
+            <img src="images/roma.jpg" alt="Rome" data-text="Rome">
+            <img src="images/torino.jpg" alt="Torino" data-text="Torino">
+            <img src="images/venice.jpg" alt="Venice" data-text="Venice">
+            <img src="images/florencee.jpg" alt="Florence" data-text="Florence">
+            <div class="text-container">Italy</div>
+        </div>
+         </div>
+          <!-- spnj Card -->
+          <div class="card10">
+            <div class="slides1">
+              <img src="images/spain.jpg" alt="Spain" class="active" data-text="Spain">
+              <img src="images/madrid.avif" alt="Madrid" data-text="Madrid">
+              <img src="images/barcelona1.jpg" alt="Barcelona" data-text="Barcelona">
+              <img src="images/tenerife.jpeg" alt="Tenerife" data-text="Tenerife">
+              <img src="images/seville.avif" alt="Seville" data-text="Seville">
+              <img src="images/valencia.avif" alt="Valencia" data-text="Valencia">
+              <div class="text-container">Spain</div>
+            </div>
+          </div>
+            <!-- bota Card -->
+            <div class="card10">
+              <div class="slides1">
+                <img src="images/PROFILII.jpg" alt="All Around The World" class="active" data-text="All Around The World">
+                <img src="images/belgjika1.avif" alt="Belgium" data-text="Belgium">
+                <img src="images/portugalia.jpg" alt="Portugal" data-text="Portugal">
+                <img src="images/denmark.jpg" alt="Denmark" data-text="Denmark">
+                <img src="images/swedenn.jpg" alt="Sweden" data-text="Sweden">
+                <img src="images/ndalnd.jpg" alt="Finland" data-text="Finland">
+                <div class="text-container">All Around The World</div>
+              </div>
+      </div>
+    </section>
+    <script>
+      const cards = document.querySelectorAll('.card10'); // Select all cards
+    
+      cards.forEach(card => {
+        const slides = card.querySelectorAll('img');
+        const textContainer = card.querySelector('.text-container');
+        let currentIndex = 0;
+    
+        setInterval(() => {
+          // Remove active class from the current image
+          slides[currentIndex].classList.remove('active');
+    
+          // Update index for the next image
+          currentIndex = (currentIndex + 1) % slides.length;
+    
+          // Add active class to the next image
+          slides[currentIndex].classList.add('active');
+    
+          // Update the text in the text container
+          textContainer.textContent = slides[currentIndex].getAttribute('data-text') || 'No Data';
+        }, 3000); // Change every 3 seconds
+      });
+    </script>
+   
+  
+     
+<footer>
+  <nav>
+      <a href="index.html"data-en="Home" data-sq="Ballina">Home</a>
+      <a href="hotel.html"data-en="Hotel" data-sq="Hotel">Hotel</a>
+      <a href="flight.html"data-en="Flight" data-sq="Fluturime">Flight</a>
+      <a href="bus.html"data-en="Bus" data-sq="Autobus">Bus</a>
+      <a href="contact.html"data-en="Contact" data-sq="Kontakt">Contact</a>
+  </nav>
+
+  <img class="footer-logo" src="icon/logologoo-removebg-preview.png" alt="Footer Logo">
+  <div class="footer-content">
+      <div class="social-links">
+        <a href="https://www.instagram.com/rigatravel_/" target="_blank">
+          <img class="ig" src="icon/icons8-instagram-50.png" alt="Instagram">
+      </a>
+          <a href="https://www.facebook.com/profile.php?id=61556508524916&mibextid=LQQJ4d" target="_blank">
+          <img class="fb" src="icon/icons8-facebook-50.png" alt="Facebook"> 
+      </a> 
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rigatravel2024@gmail.com&su=Inquiry%20from%20Website" target="_blank">
+          <img class="emaili" src="icon/icons8-email-50.png" alt="Email"> 
+      </a>
+
+          <p>&copy; 2025 RIGA TRAVEL.</p>
+      </div>
+  </div>
+</footer>
+
+   
+
+    
+    
+</body>
+</html>
