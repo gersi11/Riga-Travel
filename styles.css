@@ -961,6 +961,22 @@ b {
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .instagram-container {
+        overflow-x: hidden; /* Stop horizontal scroll */
+        justify-content: center; /* Center items */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .instagram-container blockquote.instagram-media {
+        flex: 0 0 23%; /* 4 items per row (roughly 25% each with some gap) */
+        max-width: 300px;
+    }
+}
+
+
 
 
   .carousel-container {
@@ -2598,3 +2614,42 @@ hr{
         object-fit: cover; /* Prevent image distortion */
     }
 }
+
+
+#banner h1 span,
+#banner p span {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.3);
+    animation: popIn 0.2s forwards;
+    height: 10px;
+}
+
+@keyframes popIn {
+    to {
+        opacity: 3;
+        transform: scale(1);
+    }
+}
+#banner p {
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    #banner p {
+        line-height: 1.4;
+    }
+}
+@media (max-width: 400px) {
+    #banner p {
+    
+        line-height: 1.3;
+    }
+}
+
+
